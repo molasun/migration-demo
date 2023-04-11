@@ -1,6 +1,7 @@
 FROM quay.io/rh_ee_dechou/openjdk-11:1.14-5 as build
 WORKDIR /app/build
 COPY . /app/build/.
+RUN chmod +x mvnw
 RUN ./mvnw clean package
 
 FROM quay.io/rh_ee_dechou/openjdk-11-runtime:1.14-5
